@@ -9,7 +9,7 @@ public:
 	virtual ~Shape();
 	const Point& getOrigin ();
 	char* getName();
-  virtual	void display();
+  virtual void display();
 	double distance (Shape& other);
 	static double distance (Shape& the_shape, Shape& other);
 	void move (double dx, double dy);

@@ -36,7 +36,7 @@ Point& Point::operator=(const Point& rhs)
 void Point::display()const
 {
 	printf("X-coordinate: %6.2f\n", x);
-	printf("Y-coordinate: %6.2f\n", x);
+	printf("Y-coordinate: %6.2f\n", y);
 }
 
 int Point::counter()

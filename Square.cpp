@@ -5,12 +5,11 @@
 using namespace std;
 
 // Constructor
-Square::Square(double x, double y, double side_a, const char *name) : Shape(x, y, name)
+Square::Square(double x, double y, double side_a, const char *name) : Shape(x, y, name), side_a(side_a)
 {
-    side_a = side_a;
 }
 
-Square::Square(const Square &source) : Shape(source)
+Square::Square(const Square &source) : Shape(source), side_a(source.side_a)
 {
 }
 
@@ -22,7 +21,6 @@ Square &Square::operator=(const Square &rhs)
 
 Square::~Square()
 {
-    Shape::~Shape();
 }
 
 double Square::area()
