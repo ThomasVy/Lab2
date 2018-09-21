@@ -5,12 +5,20 @@ using namespace std;
 
 Shape::Shape(double x, double y, const char* name): origin(x, y)
 {
-	shapeName = new char[(int)strlen(name)];
+	shapeName = new char[(int)strlen(name)+1];
+	if(shapeName == NULL){
+		cerr << "Memory not available...";
+		exit(1);
+	}
 	strcpy(shapeName, name);
 }
 Shape::Shape(const Shape& rhs): origin(rhs.origin)
 {
-	shapeName = new char[(int)strlen(rhs.shapeName)];
+	shapeName = new char[(int)strlen(rhs.shapeName)+1];
+	if(shapeName == NULL){
+		cerr << "Memory not available...";
+		exit(1);
+	}
 	strcpy(shapeName, rhs.shapeName);
 }
 Shape& Shape::operator= (const Shape& rhs)
@@ -18,7 +26,11 @@ Shape& Shape::operator= (const Shape& rhs)
 	if(this != &rhs)
 	{
 		delete[] shapeName;
-		shapeName = new char[(int)strlen(rhs.shapeName)];
+		shapeName = new char[(int)strlen(rhs.shapeName)+1];
+		if(shapeName == NULL){
+			cerr << "Memory not available...";
+			exit(1);
+		}
 		strcpy(shapeName, rhs.shapeName );
 		origin = rhs.origin;
 	}
