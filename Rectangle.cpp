@@ -24,7 +24,6 @@ Rectangle &Rectangle::operator=(const Rectangle &rhs)
 
 Rectangle::~Rectangle()
 {
-    Square::~Square();
 }
 
 double Rectangle::area()
@@ -41,4 +40,14 @@ void Rectangle::display()
 {
     Square::display();
     cout << "Side b: " << side_b << endl;
+}
+
+double Rectangle::get_side_b ()
+{
+  return side_b;
+}
+
+void Rectangle::set_side_b (const double b)
+{
+  side_b = b;
 }

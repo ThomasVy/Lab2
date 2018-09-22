@@ -41,7 +41,7 @@ Shape::~Shape()
 	delete [] shapeName;
 }
 
-const Point& Shape::getOrigin ()
+const Point& Shape::getOrigin ()const
 {
 	return origin;
 }
@@ -68,4 +68,24 @@ double Shape::distance(Shape& the_shape, Shape& other)
 void Shape::move(double dx, double dy)
 {
 	origin.move(dx, dy);
+}
+
+const char* Shape::getShapeName()const
+{
+	return shapeName;
+}
+void Shape::setOrigin(const double x, const double y)
+{
+	origin.setx(x);
+	origin.sety(y);
+}
+void Shape::setShapeName(const char* name)
+{
+	delete[] shapeName;
+	shapeName = new char[(int)strlen(name)+1];
+	if(shapeName == NULL){
+		cerr << "Memory not available...";
+		exit(1);
+	}
+	strcpy(shapeName, name );
 }

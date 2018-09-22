@@ -57,8 +57,24 @@ double Point::distance (const Point& firstPoint, const Point& secondPoint)
 	double tempy = firstPoint.y - secondPoint.y;
 	return sqrt(pow(tempx,2) + pow(tempy,2));
 }
-void Point::move(double dx, double dy)
+void Point::move(const double& dx, const double& dy)
 {
 	x += dx;
 	y+= dy;
+}
+void Point::setx(const double& x)
+{
+	this->x=x;
+}
+void Point::sety(const double& y)
+{
+	this->y=y;
+}
+double Point::getx()
+{
+	return x;
+}
+double Point::gety()
+{
+	return y;
 }

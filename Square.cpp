@@ -16,6 +16,7 @@ Square::Square(const Square &source) : Shape(source), side_a(source.side_a)
 Square &Square::operator=(const Square &rhs)
 {
     Shape::operator=(rhs);
+    side_a = rhs.side_a;
     return *this;
 }
 
@@ -39,4 +40,14 @@ void Square::display()
     cout << "Side a: " << side_a << endl;
     cout << "Area: " << area() << endl;
     cout << "Perimeter: " << perimeter() << endl;
+}
+
+void Square::set_side_a(const double a)
+{
+  side_a = a;
+}
+
+double Square::get_side_a()
+{
+  return side_a;
 }

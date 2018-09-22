@@ -10,7 +10,12 @@ public:
 	static int counter();
 	double distance(const Point& secondPoint)const;
 	static double distance (const Point& firstPoint, const Point& secondPoint);
-	void move(double dx, double dy);
+	void move(const double& dx, const double& dy);
+
+	void setx(const double& x);
+	void sety(const double& y);
+	double getx();
+	double gety();
 private:
 	double x;
 	double y;

@@ -14,8 +14,9 @@ class Rectangle : public Square
     double perimeter();
     void display();
 
-  private:
-    double side_a;
+    double get_side_b ();
+    void set_side_b (const double b);
+  protected:
     double side_b;
 };
 
